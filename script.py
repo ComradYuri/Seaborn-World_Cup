@@ -34,4 +34,13 @@ ax2 = sns.boxplot(x="year", y="goals", data=df_goals, palette="Spectral")
 ax.set_title("Goals visualisation")
 
 plt.show()
+plt.close("all")
 
+plt.figure(figsize=[12, 8])
+ax3 = plt.subplot()
+df_after1970 = df[df["Year"] > 1970]
+print(df_after1970.head())
+ax3 = sns.violinplot(data=df_after1970, x="Year", y="Total Goals")
+plt.show()
+maximumgoals = df[df["Total Goals"] == max(df["Total Goals"])]
+print(maximumgoals)
